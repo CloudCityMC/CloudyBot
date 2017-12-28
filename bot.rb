@@ -26,6 +26,9 @@ Dir["#{File.dirname(__FILE__)}/plugins/*.rb"].each { |file| require file }
 # Load Nickserv file
 NS = YAML.load_file('nickserv.yaml')
 
+# Load staff list
+Staff = YAML.load_file('staff.yaml')
+
 # Configure the Bot
 bot = Cinch::Bot.new do
   configure do |c|
