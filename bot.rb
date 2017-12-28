@@ -44,7 +44,7 @@ bot = Cinch::Bot.new do
     c.plugins.prefix = /@/
 
     # Load modules.
-    c.plugins.plugins = [Links, NickServ]
+    c.plugins.plugins = [Links, NickServ, Restart]
   end
 end
 # START THE BOT
