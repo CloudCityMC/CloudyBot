@@ -1,0 +1,19 @@
+language: ruby
+rvm:
+- 2.4.1
+script:
+ - rubocop
+install: gem install rubocop -v 0.50.0
+notifications:
+  irc:
+    channels:
+      - "irc.chew.chat#CloudyBot"
+    template:
+      - "Build #%{build_number}: %{message} Time Elapsed: %{elapsed_time}. %{build_url}"
+    on_success: always
+    on_failure: always
+    on_start: always
+    on_cancel: always
+    on_error: always
+    skip_join: true
+    nick: cloud-worker
