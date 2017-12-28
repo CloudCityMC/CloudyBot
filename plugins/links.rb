@@ -1,0 +1,9 @@
+class Links
+  include Cinch::Plugin
+
+  match /forums/, method: :forums, use_prefix: false
+
+  def forums(m)
+    m.reply 'You can chat on the forums here: http://cloudcitymc.us'
+  end
+end
