@@ -29,6 +29,9 @@ NS = YAML.load_file('nickserv.yaml')
 # Load staff list
 Staff = YAML.load_file('staff.yaml')
 
+# Starttime for restart
+STARTTIME = Time.now
+
 # Configure the Bot
 bot = Cinch::Bot.new do
   configure do |c|
