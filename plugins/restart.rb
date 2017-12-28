@@ -5,8 +5,8 @@ class Restart
   match /update/, method: :update
 
   def getrank(m, nick)
-    rank = Staff[nick]['rank']
-    host = Staff[nick]['host']
+    rank = Staff[nick]['Rank']
+    host = Staff[nick]['Host']
     userhost = m.user.host
     if userhost != host
       return 'none'
@@ -18,7 +18,7 @@ class Restart
   def restart(m)
     return if Time.now - STARTTIME < 10
     unless getrank(m, m.user.name) == 'Admin' || getrank(m, m.user.name) == 'Owner'
-      m.reply "Only Admins and Owners may restart me!"
+      m.reply 'Only Admins and Owners may restart me!'
       return
     end
     m.reply 'Restarting the bot without updating...'
@@ -29,7 +29,7 @@ class Restart
   def update(m)
     return if Time.now - STARTTIME < 10
     unless getrank(m, m.user.name) == 'Admin' || getrank(m, m.user.name) == 'Owner'
-      m.reply "Only Admins and Owners may restart me!"
+      m.reply 'Only Admins and Owners may restart me!'
       return
     end
     m.reply 'Restarting and Updating!'
