@@ -23,13 +23,16 @@ require 'open-uri'
 # Require each plugin
 Dir["#{File.dirname(__FILE__)}/plugins/*.rb"].each { |file| require file }
 
+# Load Nickserv file
+NS = YAML.load_file('nickserv.yaml')
+
 # Configure the Bot
 bot = Cinch::Bot.new do
   configure do |c|
     # Bot Settings, Taken from pre-config
     c.nick = 'CloudyBot'
     c.server = 'irc.chew.chat'
-    c.channels = ["#CloudCity,#CloudyBot"]
+    c.channels = ['#CloudCity,#CloudyBot']
     c.port = '6697'
     c.user = 'CloudyBot'
     c.realname = 'Bot for #CloudCity'
@@ -38,7 +41,7 @@ bot = Cinch::Bot.new do
     c.plugins.prefix = /@/
 
     # Load modules.
-    c.plugins.plugins = [Links]
+    c.plugins.plugins = [Links, NickServ]
   end
 end
 # START THE BOT
