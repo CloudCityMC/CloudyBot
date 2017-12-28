@@ -29,7 +29,7 @@ bot = Cinch::Bot.new do
     # Bot Settings, Taken from pre-config
     c.nick = 'CloudyBot'
     c.server = 'irc.chew.chat'
-    c.channels = ["#CloudCity"]
+    c.channels = ["#CloudCity,#CloudyBot"]
     c.port = '6697'
     c.user = 'CloudyBot'
     c.realname = 'Bot for #CloudCity'
