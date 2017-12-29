@@ -7,7 +7,7 @@ class Links
   match /irc/, method: :irc
   match /help/, method: :help
   match /commands/, method: :help
-  
+
   def forums(m)
     m.reply 'You can chat on the forums here: http://forums.cloudcitymc.us'
   end
@@ -23,7 +23,7 @@ class Links
   def irc(m)
     m.reply 'You can chat with us on IRC here: http://cloudcitymc.us/irc'
   end
-  
+
   def help(m)
     m.reply 'My commands include: forums, rules, vote, and irc!'
   end
