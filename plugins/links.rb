@@ -24,7 +24,7 @@ class Links
     m.reply 'You can chat with us on IRC here: http://cloudcitymc.us/irc'
   end
   
-   def help(m)
+  def help(m)
     m.reply 'My commands include: forums, rules, vote, and irc!'
   end
 end
