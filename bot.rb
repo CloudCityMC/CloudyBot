@@ -35,7 +35,7 @@ STARTTIME = Time.now
 # Configure the Bot
 bot = Cinch::Bot.new do
   configure do |c|
-    # Bot Settings, Taken from pre-config
+    # Bot Settings
     c.nick = 'CloudyBot'
     c.server = 'irc.chew.chat'
     c.channels = ['#CloudCity,#CloudyBot']
