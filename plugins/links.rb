@@ -6,7 +6,7 @@ class Links
   match /vote/, method: :vote
   match /irc/, method: :irc
   match /links/, method: :links
-
+  match /help/, method: :links
   def forums(m)
     m.reply 'You can chat on the forums here: http://forums.cloudcitymc.us'
   end
