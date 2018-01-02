@@ -5,6 +5,7 @@ class Links
   match /rules/, method: :rules
   match /vote/, method: :vote
   match /irc/, method: :irc
+  match /links/, method: :links
 
   def forums(m)
     m.reply 'You can chat on the forums here: http://forums.cloudcitymc.us'
@@ -20,5 +21,9 @@ class Links
 
   def irc(m)
     m.reply 'You can chat with us on IRC here: http://cloudcitymc.us/irc'
+  end
+
+  def links(m)
+    m.reply 'I have links to: forums, rules, vote, and irc'
   end
 end
