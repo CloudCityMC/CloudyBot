@@ -27,7 +27,7 @@ class Commands
   end
 
   def loadstaff
-    return YAML.load_file('staff.yaml')
+    YAML.load_file('staff.yaml')
   end
 
   def ban(m, user, time, message)
