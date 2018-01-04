@@ -8,6 +8,8 @@ class Links
   match /report/, method: :report
   match /sell/, method: :sell
   match /shop/, method: :shop
+  match /store/, method: :store
+  match /feedback/, method: :feedback
   match /links/, method: :links
 
   def forums(m)
@@ -38,7 +40,15 @@ class Links
     m.reply 'Want to suggest an item to be added to the shop? Do it on the forums here: https://forums.cloudcitymc.us/threads/items-that-should-be-sold-in-the-shop.10/'
   end
 
+  def store(m)
+    m.reply 'Want to donate to the server? Do it here: https://store.cloudcitymc.us/'
+  end
+
+  def feedback(m)
+    m.reply 'Want to suggest something for the server? Do it here: https://feedback.cloudcitymc.us/'
+  end
+
   def links(m)
-    m.reply 'Possible links: forums, rules, vote, irc, report, sell, shop. Reference it with @[link].'
+    m.reply 'Possible links: forums, rules, vote, irc, report, sell, shop, store, feedback. Reference it with @[link].'
   end
 end
