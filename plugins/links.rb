@@ -9,6 +9,7 @@ class Links
   match /sell/, method: :sell
   match /shop/, method: :shop
   match /store/, method: :store
+  match /donate/, method: :store
   match /feedback/, method: :feedback
   match /links/, method: :links
 
@@ -49,6 +50,6 @@ class Links
   end
 
   def links(m)
-    m.reply 'Possible links: forums, rules, vote, irc, report, sell, shop, store, feedback. Reference it with @[link].'
+    m.reply 'Possible links: forums, rules, vote, irc, report, sell, shop, store/donate, feedback. Reference it with @[link].'
   end
 end
