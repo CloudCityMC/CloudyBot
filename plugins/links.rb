@@ -14,6 +14,7 @@ class Links
   match /twitter/, method: :twitter
   match /linktwitter/, method: :linktwitter
   match /links/, method: :links
+  match /website/ , method: :website
 
   def forums(m)
     m.reply 'You can chat on the forums here: http://forums.cloudcitymc.us'
@@ -62,4 +63,9 @@ class Links
   def links(m)
     m.reply 'Possible links: forums, rules, vote, irc, report, sell, shop, store/donate, feedback, twitter, linktwitter. Reference it with @[link].'
   end
+
+  def website(m)
+	m.reply 'You can visit the official server website here: https://cloudcitymc.us/'
+  end
+
 end

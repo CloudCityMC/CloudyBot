@@ -5,6 +5,9 @@ class Commands
   match /mute (.+) (.+) (.+)/, method: :mute
   match /kick (.+) (.+)/, method: :kick
   match /warn (.+) (.+)/, method: :warn
+  match /commands/ , method: :commands
+  match /help/ , method: :commands
+  match /prefix/ , method: :prefix
 
   def authenticate(m)
     name = m.user.name
@@ -69,4 +72,13 @@ class Commands
     User('CloudCityMC').send("#{bob[m.user.name]['Command']} warn #{user} #{message}")
     m.reply 'You have successfully warned that user!'
   end
+
+    def commands(m)
+	m.reply 'Admin commands include: ban, kick, warn, mute; Player commands include: prefix, help, commands'
+  end
+
+  def prefx(m)
+	m.reply 'My current prefix is "@".'
+  end
+
 end
