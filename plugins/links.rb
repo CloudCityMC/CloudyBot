@@ -12,6 +12,7 @@ class Links
   match /donate/, method: :store
   match /feedback/, method: :feedback
   match /twitter/, method: :twitter
+  match /linktwitter/, method: :linktwitter
   match /links/, method: :links
 
   def forums(m)
@@ -54,7 +55,11 @@ class Links
     m.reply 'Want to follow us on twitter? Do it here: https://twitter.com/CloudCityMC'
   end
 
+  def linktwitter(m)
+    m.reply 'Want to link your twitter account? Do it here: https://forums.cloudcitymc.us/threads/new-twitter-integration-in-game-and-how-to-link.12/'
+  end
+
   def links(m)
-    m.reply 'Possible links: forums, rules, vote, irc, report, sell, shop, store/donate, feedback, twitter. Reference it with @[link].'
+    m.reply 'Possible links: forums, rules, vote, irc, report, sell, shop, store/donate, feedback, twitter, linktwitter. Reference it with @[link].'
   end
 end
