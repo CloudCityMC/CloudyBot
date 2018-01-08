@@ -13,8 +13,8 @@ class Links
   match /feedback/, method: :feedback
   match /twitter/, method: :twitter
   match /linktwitter/, method: :linktwitter
-  match /links/, method: :links
   match /website/, method: :website
+  match /links/, method: :links
 
   def forums(m)
     m.reply 'You can chat on the forums here: http://forums.cloudcitymc.us'
@@ -60,12 +60,11 @@ class Links
     m.reply 'Want to link your twitter account? Do it here: https://forums.cloudcitymc.us/threads/new-twitter-integration-in-game-and-how-to-link.12/'
   end
 
-  def links(m)
-    m.reply 'Possible links: forums, rules, vote, irc, report, sell, shop, store/donate, feedback, twitter, linktwitter. Reference it with @[link].'
-  end
-
   def website(m)
     m.reply 'You can visit the official server website here: https://cloudcitymc.us/'
   end
 
+  def links(m)
+    m.reply 'Possible links: forums, rules, vote, irc, report, sell, shop, store/donate, feedback, twitter, linktwitter, website. Reference it with @[link].'
+  end
 end
