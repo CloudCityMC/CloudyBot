@@ -11,6 +11,7 @@ class Links
   match /store/, method: :store
   match /donate/, method: :store
   match /feedback/, method: :feedback
+  match /twitter/, method: :twitter
   match /links/, method: :links
 
   def forums(m)
@@ -49,7 +50,11 @@ class Links
     m.reply 'Want to suggest something for the server? Do it here: https://feedback.cloudcitymc.us/'
   end
 
+  def twitter(m)
+    m.reply 'Want to follow us on twitter? Do it here: https://twitter.com/CloudCityMC'
+  end
+
   def links(m)
-    m.reply 'Possible links: forums, rules, vote, irc, report, sell, shop, store/donate, feedback. Reference it with @[link].'
+    m.reply 'Possible links: forums, rules, vote, irc, report, sell, shop, store/donate, feedback, twitter. Reference it with @[link].'
   end
 end
