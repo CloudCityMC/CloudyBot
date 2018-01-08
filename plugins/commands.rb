@@ -5,7 +5,7 @@ class Commands
   match /mute (.+) (.+) (.+)/, method: :mute
   match /kick (.+) (.+)/, method: :kick
   match /warn (.+) (.+)/, method: :warn
-  match /commands/ , method: :commands
+  match /commands/, method: :commands
   match /help/, method: :commands
   match /prefix/, method: :prefix
 
@@ -80,5 +80,4 @@ class Commands
   def prefx(m)
     m.reply 'My current prefix is "@".'
   end
-
 end
