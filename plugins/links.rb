@@ -14,6 +14,7 @@ class Links
   match /twitter/, method: :twitter
   match /linktwitter/, method: :linktwitter
   match /website/, method: :website
+  match /site/, method: :website
   match /links/, method: :links
 
   def forums(m)
