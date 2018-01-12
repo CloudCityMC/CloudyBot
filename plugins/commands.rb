@@ -81,6 +81,7 @@ class Commands
   def prefx(m)
     m.reply 'My current prefix is "@".'
   end
+
   def versions(m)
     m.reply 'CloudCityMC supports the following released versions of minecraft: 1.9.x, 1.10.x, 1.11.x, 1.12.x'
   end
