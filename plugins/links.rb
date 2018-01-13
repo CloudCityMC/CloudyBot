@@ -16,6 +16,7 @@ class Links
   match /website/, method: :website
   match /site/, method: :website
   match /links/, method: :links
+  match /staff/, method: :staff
 
   def forums(m)
     m.reply 'You can chat on the forums here: http://forums.cloudcitymc.us'
@@ -67,5 +68,9 @@ class Links
 
   def links(m)
     m.reply 'Possible links: forums, rules, vote, irc, report, sell, shop, store/donate, feedback, twitter, linktwitter, website. Reference it with @[link].'
+  end
+
+  def staff(m)
+    m.reply 'You can find the staff list here: https://forums.cloudcitymc.us/members/?key=staff_members'
   end
 end
