@@ -5,6 +5,9 @@ class Commands
   match /mute (.+)/, method: :mute
   match /kick (.+)/, method: :kick
   match /warn (.+)/, method: :warn
+  match /unwarn (.+)/, method: :warn
+  match /pardon (.+)/, method: :pardon
+  match /unban (.+)/, method: :pardon
   match /commands/, method: :commands
   match /help/, method: :commands
   match /prefix/, method: :prefix
@@ -44,6 +47,16 @@ class Commands
     m.reply 'You have successfully banned that user!'
   end
 
+  def unban(m, message)
+    bob = loadstaff
+    unless authenticate(m) && checkperm(m, m.user.name, 'ban')
+      m.reply 'You cannot unban! What are you, a bean?'
+      return
+    end
+    User('CloudCityMC').send("#{bob[m.user.name]['Command']} unban #{message}")
+    m.reply 'You have successfully un-banned that user!'
+  end
+
   def mute(m, message)
     bob = loadstaff
     unless authenticate(m) && checkperm(m, m.user.name, 'mute')
@@ -72,6 +85,16 @@ class Commands
     end
     User('CloudCityMC').send("#{bob[m.user.name]['Command']} warn #{message}")
     m.reply 'You have successfully warned that user!'
+  end
+
+  def warn(m, message)
+    bob = loadstaff
+    unless authenticate(m) && checkperm(m, m.user.name, 'warn')
+      m.reply 'You cannot un-warn! What are you, a bean?'
+      return
+    end
+    User('CloudCityMC').send("#{bob[m.user.name]['Command']} unwarn #{message}")
+    m.reply 'You have successfully un-warned that user!'
   end
 
   def commands(m)
