@@ -5,7 +5,7 @@ class Commands
   match /mute (.+)/, method: :mute
   match /kick (.+)/, method: :kick
   match /warn (.+)/, method: :warn
-  match /unwarn (.+)/, method: :warn
+  match /unwarn (.+)/, method: :unwarn
   match /pardon (.+)/, method: :pardon
   match /unban (.+)/, method: :pardon
   match /commands/, method: :commands
@@ -87,7 +87,7 @@ class Commands
     m.reply 'You have successfully warned that user!'
   end
 
-  def warn(m, message)
+  def unwarn(m, message)
     bob = loadstaff
     unless authenticate(m) && checkperm(m, m.user.name, 'warn')
       m.reply 'You cannot un-warn! What are you, a bean?'
