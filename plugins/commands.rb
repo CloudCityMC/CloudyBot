@@ -1,10 +1,10 @@
 class Commands
   include Cinch::Plugin
 
-  match /ban (.+) (.+) (.+)/, method: :ban
-  match /mute (.+) (.+) (.+)/, method: :mute
-  match /kick (.+) (.+)/, method: :kick
-  match /warn (.+) (.+)/, method: :warn
+  match /ban (.+)/, method: :ban
+  match /mute (.+)/, method: :mute
+  match /kick (.+)/, method: :kick
+  match /warn (.+)/, method: :warn
   match /commands/, method: :commands
   match /help/, method: :commands
   match /prefix/, method: :prefix
@@ -34,43 +34,43 @@ class Commands
     YAML.load_file('staff.yaml')
   end
 
-  def ban(m, user, time, message)
+  def ban(m, message)
     bob = loadstaff
     unless authenticate(m) && checkperm(m, m.user.name, 'ban')
       m.reply 'You cannot ban! What are you, a bean?'
       return
     end
-    User('CloudCityMC').send("#{bob[m.user.name]['Command']} ban #{time} #{user} #{message}")
+    User('CloudCityMC').send("#{bob[m.user.name]['Command']} ban #{message}")
     m.reply 'You have successfully banned that user!'
   end
 
-  def mute(m, user, time, message)
+  def mute(m, message)
     bob = loadstaff
     unless authenticate(m) && checkperm(m, m.user.name, 'mute')
       m.reply 'You cannot mute! What are you, a bean?'
       return
     end
-    User('CloudCityMC').send("#{bob[m.user.name]['Command']} mute #{time} #{user} #{message}")
+    User('CloudCityMC').send("#{bob[m.user.name]['Command']} mute  #{message}")
     m.reply 'You have successfully muted that user!'
   end
 
-  def kick(m, user, message)
+  def kick(m, message)
     bob = loadstaff
     unless authenticate(m) && checkperm(m, m.user.name, 'kick')
       m.reply 'You cannot kick! What are you, a bean?'
       return
     end
-    User('CloudCityMC').send("#{bob[m.user.name]['Command']} kick #{user} #{message}")
+    User('CloudCityMC').send("#{bob[m.user.name]['Command']} kick #{message}")
     m.reply 'You have successfully kicked that user!'
   end
 
-  def warn(m, user, message)
+  def warn(m, message)
     bob = loadstaff
     unless authenticate(m) && checkperm(m, m.user.name, 'warn')
       m.reply 'You cannot warn! What are you, a bean?'
       return
     end
-    User('CloudCityMC').send("#{bob[m.user.name]['Command']} warn #{user} #{message}")
+    User('CloudCityMC').send("#{bob[m.user.name]['Command']} warn #{message}")
     m.reply 'You have successfully warned that user!'
   end
 
