@@ -47,7 +47,7 @@ class Commands
     m.reply 'You have successfully banned that user!'
   end
 
-  def unban(m, message)
+  def pardon(m, message)
     bob = loadstaff
     unless authenticate(m) && checkperm(m, m.user.name, 'ban')
       m.reply 'You cannot unban! What are you, a bean?'
